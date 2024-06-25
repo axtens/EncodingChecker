@@ -63,5 +63,7 @@ namespace EncChecker
       strArray[2] = interpolatedStringHandler.ToStringAndClear();
       return string.Join("~", strArray) + "~";
     }
-  }
+
+        public static Encoding DetectBytesAsEncoding(byte[] bytes) => CharsetDetector.DetectFromBytes(bytes).Detected.Encoding;
+    }
 }
